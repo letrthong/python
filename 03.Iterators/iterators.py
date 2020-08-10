@@ -13,5 +13,5 @@ while True:
 
 print("") 
 size= len(text)   
-for i in range(size)  : 
+for i in range(size): 
     print( text[i]) 
