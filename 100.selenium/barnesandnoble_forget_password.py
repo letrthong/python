@@ -34,8 +34,6 @@ driver.find_element(By.XPATH,
 time.sleep(4)
 save_screenshot(driver)
 
-# Process Dialog
-
 
 # https://www.selenium.dev/documentation/webdriver/browser_manipulation/#frames-and-iframes
 iframes = driver.find_elements(By.TAG_NAME, 'iframe')
@@ -46,6 +44,25 @@ for iframe in iframes:
             driver.switch_to.frame(iframe)
             driver.find_element(By.ID, 'email').send_keys("letrthong@gmail.com")
             time.sleep(4)
+            driver.find_element(By.ID, 'loginForgotPassword').click()
+            time.sleep(4)
+            break
+
+driver.switch_to.default_content()
+iframes = driver.find_elements(By.TAG_NAME, 'iframe')
+for iframe in iframes:
+    title = iframe.get_attribute("title")
+    if title is not None:
+        if title == "Password Assistance":
+            driver.switch_to.frame(iframe)
+            driver.find_element(By.ID, 'email').send_keys("xxxxx@gmail.comx")
+            time.sleep(4)
+            driver.find_element(By.ID, 'resetPwSubmit').click()
+            time.sleep(4)
+            # https://www.selenium.dev/documentation/webdriver/web_element/
+            WebElementEmbed = driver.find_element(By.XPATH,"//em[@class='emphasis emphasis--alert']")
+            print("WebElementEmbed text=" + WebElementEmbed.text)
+            break
 
 
 
