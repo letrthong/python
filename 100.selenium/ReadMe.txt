@@ -1,3 +1,7 @@
+https://github.com/SeleniumHQ/selenium
+https://www.selenium.dev/selenium/docs/api/py/
+https://www.selenium.dev/documentation/
+
 https://selenium-python.readthedocs.io/
 https://selenium-python.readthedocs.io/navigating.html#interacting-with-the-page
 https://www.javatpoint.com/selenium-python
