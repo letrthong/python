@@ -17,7 +17,7 @@ driver.get("https://updater-neon-bot-dev-01.ngrok.io/")
 time.sleep(1)
 select = Select(driver.find_element(By.ID, "id_header_language"))
 select.select_by_index(2)
- 
+
 time.sleep(3)
 
 driver.close()
