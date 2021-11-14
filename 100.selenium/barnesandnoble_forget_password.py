@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 from selenium.webdriver.support.wait import WebDriverWait
-
+from selenium.webdriver.support.expected_conditions import presence_of_element_located
 
 def save_screenshot(driver):
     driver.save_screenshot(".\screenshot\screenshot.png")
@@ -35,12 +35,21 @@ time.sleep(4)
 save_screenshot(driver)
 
 # Process Dialog
-try:
-    wait = WebDriverWait(driver, 10)
-    first_result = wait.until(EC.presence_of_element_located((By.XPATH, "//a[@id='loginForgotPassword']")))
-    print(first_result.get_attribute("class"))
-except:
-    print("An exception occurred")
 
+
+# https://www.selenium.dev/documentation/webdriver/browser_manipulation/#frames-and-iframes
+iframes = driver.find_elements(By.TAG_NAME, 'iframe')
+for iframe in iframes:
+    title = iframe.get_attribute("title")
+    if title is not None:
+        if title == "Sign in or Create an Account":
+            driver.switch_to.frame(iframe)
+            driver.find_element(By.ID, 'email').send_keys("letrthong@gmail.com")
+            time.sleep(4)
+
+
+
+time.sleep(4)
+driver.switch_to.default_content()
 driver.close()
 driver.quit()
