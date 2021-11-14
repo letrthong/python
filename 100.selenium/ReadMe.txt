@@ -1,5 +1,8 @@
 https://selenium-python.readthedocs.io/
+https://selenium-python.readthedocs.io/navigating.html#interacting-with-the-page
 https://www.javatpoint.com/selenium-python
+https://www.guru99.com/alert-popup-handling-selenium.html
+https://www.javatpoint.com/selenium-webdriver-navigation-commands
 
 Using python3 on Window OS 
 
