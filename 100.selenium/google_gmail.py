@@ -1,10 +1,10 @@
 #
 # google-auth-oauthlib https://pypi.org/project/google-auth-oauthlib/
 # google-api-python-client https://pypi.org/project/google-api-python-client/
-# https://github.com/googleapis/google-api-python-client
 #
 # https://developers.google.com/gmail/api/quickstart/python
 # https://github.com/googleworkspace/python-samples/blob/master/gmail/quickstart/quickstart.py
+#  https://developers.google.com/workspace/guides/create-credentials
 
 from __future__ import print_function
 import os.path
