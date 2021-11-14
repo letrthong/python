@@ -35,11 +35,13 @@ time.sleep(4)
 save_screenshot(driver)
 
 # Process Dialog
-wait = WebDriverWait(driver, 10)
-forgot_link = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@id='loginForgotPassword']")))
-if forgot_link is not None:
-    forgot_link.click()
-
+try:
+    wait = WebDriverWait(driver, 6)
+    forgot_link = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@id='loginForgotPassword']")))
+    if forgot_link is not None:
+        forgot_link.click()
+except:
+    print("An exception occurred")
 
 driver.close()
 driver.quit()
