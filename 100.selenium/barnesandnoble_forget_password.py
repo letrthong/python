@@ -36,10 +36,9 @@ save_screenshot(driver)
 
 # Process Dialog
 try:
-    wait = WebDriverWait(driver, 6)
-    forgot_link = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@id='loginForgotPassword']")))
-    if forgot_link is not None:
-        forgot_link.click()
+    wait = WebDriverWait(driver, 10)
+    first_result = wait.until(EC.presence_of_element_located((By.XPATH, "//a[@id='loginForgotPassword']")))
+    print(first_result.get_attribute("class"))
 except:
     print("An exception occurred")
 
