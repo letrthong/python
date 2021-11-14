@@ -18,7 +18,11 @@ time.sleep(1)
 select = Select(driver.find_element(By.ID, "id_header_language"))
 select.select_by_index(2)
 
-time.sleep(3)
+try:
+    time.sleep(3)
+except:
+    print("An exception occurred")
 
 driver.close()
 driver.quit()
+

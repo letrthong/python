@@ -27,7 +27,7 @@ main_page = driver.current_window_handle
 # Show "Sign in" button  <a class= "nav-link   rhf-nav-link" id="navbarDropdown  href="#" >
 driver.find_element(By.XPATH,
                     "//a[@class='nav-link   rhf-nav-link' and @id='navbarDropdown'][contains(@href, '#')]").click()
-# Clicking on" Sign in" button
+# Clicking on "Sign in" button
 time.sleep(1)
 driver.find_element(By.XPATH,
                     "//a[@class=' rhf-sign-in rhf-myaccount-menu-item btn btn--medium'][contains(@href, '#')]").click()
@@ -36,8 +36,10 @@ save_screenshot(driver)
 
 # Process Dialog
 wait = WebDriverWait(driver, 10)
-wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@id ='loginForgotPassword']")))
-driver.find_element(By.ID, "loginForgotPassword").send_keys("xxxx@gmail.com")
+forgot_link = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@id='loginForgotPassword']")))
+if forgot_link is not None:
+    forgot_link.click()
+
 
 driver.close()
 driver.quit()
