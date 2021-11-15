@@ -23,7 +23,4 @@ pip3 install beautifulsoup4  selenium
 install google chrome 
 
 https://chromedriver.chromium.org/downloads version  95.0.4638.69
-
-Video for demo
-   Gmail https://www.youtube.com/watch?v=audxmRyUIfE
-   Forgot password https://www.youtube.com/watch?v=NtjpwMO_6JE
+ 
