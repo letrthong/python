@@ -1,3 +1,5 @@
+#socat.py
+
 import serial
 
 s1 = serial.Serial('/dev/pts/0')
