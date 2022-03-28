@@ -1,0 +1,8 @@
+pyserial
+https://pyserial.readthedocs.io/en/latest/pyserial.html
+https://pyserial.readthedocs.io/en/latest/shortintro.html
+python -m pip install pyserial
+
+
+Pseudo-terminal utilities
+https://docs.python.org/3/library/pty.html
