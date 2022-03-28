@@ -37,16 +37,16 @@ print(s_name)
 ser = serial.Serial(s_name)
 
 # To Write to the device
-current_time = time.time()
-print("start at= [" + str(current_time)  + "]")
+start_time = time.time()
+print("start at= [" + str(start_time)  + "]")
 ser.baudrate = 115200
 for i in range(200):
     print("i= " + str(i))
     ser.write('Your text')
     time.sleep(1) 
 
- 
-print("end at = [" + str(current_time)  + "]")
+end_time = time.time() 
+print("end at = [" + str(end_time)  + "]")
 # To read from the device
 data = os.read(master,1000)
 print(data)

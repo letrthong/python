@@ -6,6 +6,7 @@ s1 = serial.Serial('/dev/pts/0')
 s2 = serial.Serial('/dev/pts/1')
 
 print("s1 sent")
+
 s1.write('hello socat\r\n')
 
 print("s2 recieve")
