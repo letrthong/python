@@ -5,7 +5,7 @@ import time
 import Queue
 import random
 
-BUF_SIZE = 100
+BUF_SIZE = 200
 
 q = Queue.Queue(BUF_SIZE)
 
@@ -17,14 +17,14 @@ def ProducerThread( threadName, delay):
                 item = random.randint(1,10)
                 q.put(item)
                 time.sleep(0.1)
+                print( "ProducerThread %s " % ( threadName   ))
 
 def ConsumerThread( threadName, delay):
    
    while  True:
       if not q.empty():
             item = q.get()
-            print(  "ConsumerThread %s " % ( str(item)   ))
-             
+            print(  "ConsumerThread %s qsize=%d " % ( str(item) ,  q.qsize()  ))
 
 
 # producer ->  Consumer 
@@ -32,8 +32,11 @@ def ConsumerThread( threadName, delay):
 
 # Create two threads as follows
 try:
-   thread.start_new_thread( ProducerThread, ("Thread-1", 2, ) )
-   thread.start_new_thread( ConsumerThread, ("Thread-2", 4, ) )
+    for x in range(0, 200):
+        threadName= "threadName-" + str( x)
+        thread.start_new_thread( ProducerThread, (threadName, 1, ) )
+    thread.start_new_thread( ConsumerThread, ("ConsumerThread", 1, ) )
+    
 except:
    print ("Error: unable to start thread")
 
