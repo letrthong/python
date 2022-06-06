@@ -20,11 +20,12 @@ def ProducerThread( threadName, delay):
                 print( "ProducerThread %s " % ( threadName   ))
 
 def ConsumerThread( threadName, delay):
-   
-   while  True:
-      if not q.empty():
+    count = 0
+    while  True:
+        if not q.empty():
             item = q.get()
-            print(  "ConsumerThread %s qsize=%d " % ( str(item) ,  q.qsize()  ))
+            count = count +1
+            print(  "ConsumerThread %s qsize=%d  count=%d" % ( str(item) ,  q.qsize() ,count ))
 
 
 # producer ->  Consumer 
