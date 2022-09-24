@@ -7,3 +7,8 @@ https://github.com/escpos/escpos
 
 
 https://www.bixolon.com/
+
+
+pip install python-escpos
+ 
+pip3 install python-escpos
