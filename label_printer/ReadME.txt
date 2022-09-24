@@ -13,6 +13,8 @@ pip install python-escpos
  
 pip3 install python-escpos
 
+pip install win32
+
 
 Bus 001 Device 005: ID 1504:0027 BIXOLON BIXOLON SLP-TX403
 Device Descriptor:
