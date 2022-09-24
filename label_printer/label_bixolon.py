@@ -7,7 +7,7 @@ from escpos.printer import Usb
 # USB vendor and product Ids 
 
 
-p = Usb(0x1504, 0x0027, 0, profile="BIXOLON BIXOLON SLP-TX403")
+p = Usb(0x1504, 0x0027)
 p.text("Hello World\n")
 #p.image("logo.gif")
 p.barcode('1324354657687', 'EAN13', 64, 2, '', '')
