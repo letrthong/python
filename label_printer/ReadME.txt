@@ -4,3 +4,6 @@ https://python-escpos.readthedocs.io/en/latest
 
 
 https://github.com/escpos/escpos
+
+
+https://www.bixolon.com/
