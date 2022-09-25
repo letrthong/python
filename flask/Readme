@@ -1,0 +1,6 @@
+http://127.0.0.1:5000/spec
+
+
+
+pip3 install --upgrade Werkzeug==2.2.2 
+pip3 install --upgrade flask==2.2.0
