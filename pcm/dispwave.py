@@ -2,6 +2,7 @@
 from optparse import OptionParser
 from itertools import izip_longest
 import wave, struct, sys, array
+import time
 
 # https://docs.python.org/3/library/wave.html
 
@@ -44,12 +45,18 @@ if __name__ == '__main__':
     sample_rate = stream.getframerate()
     sample_width = stream.getsampwidth()
     num_frames = stream.getnframes()
+    
+    print("num_channels %d", num_channels)
+    print("sample_rate %d", sample_rate)
+    print("sample_width %d", sample_width)
+    print("num_frames %d", num_frames)
 
     raw_data = stream.readframes(num_frames) # Returns byte data
     stream.close()
 
     total_samples = num_frames * num_channels
 
+    time.sleep(4)
 
     if sample_width == 1: 
         fmt = "%iB" % total_samples # read unsigned chars
