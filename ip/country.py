@@ -28,11 +28,12 @@ while start < end:
     print(public_ip)
     api_url = "https://telua.co//services/v1/location/ip2countryCode?ip=" + public_ip
     response = requests.get(api_url)
-    print( response.json())
-    start = start + 1
+    if response.status_code == 200:
+        print( response.json())
+        start = start + 1
 
-   
-    f = open(path, "w")
-    f.write(public_ip)
-    f.close()
-    time.sleep(3)
+    
+        f = open(path, "w")
+        f.write(public_ip)
+        f.close()
+        time.sleep(3)
