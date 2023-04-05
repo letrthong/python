@@ -27,13 +27,16 @@ while start < end:
     public_ip = str(netaddr.IPAddress(start))
     print(public_ip)
     api_url = "https://telua.co//services/v1/location/ip2countryCode?ip=" + public_ip
-    response = requests.get(api_url)
-    if response.status_code == 200:
-        print( response.json())
-        start = start + 1
+    try:
+        response = requests.get(api_url)
+        if response.status_code == 200:
+            print( response.json())
+            start = start + 1
 
-    
-        f = open(path, "w")
-        f.write(public_ip)
-        f.close()
-    time.sleep(3)
+        
+            f = open(path, "w")
+            f.write(public_ip)
+            f.close()
+    except:
+        print("An exception occurred") 
+    time.sleep(5)
