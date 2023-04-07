@@ -44,7 +44,7 @@ def main ():
                     f.write(public_ip)
                     f.close()
                 else: 
-                    time.sleep(10)
+                    time.sleep(60)
         except:
             print("An exception occurred") 
         time.sleep(1)
