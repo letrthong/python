@@ -11,7 +11,7 @@ import netaddr
 import requests
 import time
 import os.path
-
+import json 
 
 
 
@@ -35,12 +35,16 @@ def main ():
             response = requests.get(api_url)
             if response.status_code == 200:
                 print( response.json())
-                start = start + 1
-
-            
-                f = open(path, "w")
-                f.write(public_ip)
-                f.close()
+                #resp_object = json.loads(response.json())
+                province= response.json()["province"]
+                print( "province=" + province)
+                if len( province) > 1:
+                    start = start + 1
+                    f = open(path, "w")
+                    f.write(public_ip)
+                    f.close()
+                else: 
+                    time.sleep(10)
         except:
             print("An exception occurred") 
         time.sleep(1)
