@@ -36,7 +36,7 @@ def main ():
             if response.status_code == 200:
                 print( response.json())
                 #resp_object = json.loads(response.json())
-                province= response.json()["province"]
+                province= response.json()["provinceCode"]
                 print( "province=" + province)
                 if len( province) > 1:
                     start = start + 1
