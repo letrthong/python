@@ -1,8 +1,12 @@
 # pip install xlsxwriter 
+# pip install pandas 
+#  pip install openpyxl 
 # https://www.geeksforgeeks.org/python-create-and-write-on-excel-file-using-xlsxwriter-module/
 
 import xlsxwriter
  
+import pandas as pd 
+
 # Workbook() takes one, non-optional, argument 
 # which is the filename that we want to create.
 workbook = xlsxwriter.Workbook('hello.xlsx')
@@ -50,3 +54,11 @@ for item in content2 :
 # Finally, close the Excel file
 # via the close() method.
 workbook.close()
+
+ 
+    
+# read csv file and convert  
+# into a dataframe object 
+df = pd.read_excel('hello.xlsx', sheet_name='Sheet1')
+# Save to CSV
+df.to_csv('data.csv', index=False)
