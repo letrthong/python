@@ -16,7 +16,11 @@ class tJsonData:
                 json_object = json.load(file)
         else:
             json_object = []
-     
+
+        if os.path.exists(item_path):
+            print(f"The folder '{item_path}' does not exist.")
+            return False
+            
         with open(item_path, 'r') as file:
             json_item = json.load(file)
 
