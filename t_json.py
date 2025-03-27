@@ -3,7 +3,6 @@ import os
 import time
 import re
 
-
 class tJsonData:
     def __init__(self, name):
         self.file_path = name
@@ -52,7 +51,6 @@ class tJsonData:
                 item = {"key": key, "value" : value}
                 data_oject.append(item)
            
-        
         json_object['data'] = data_oject
 
         with open(item_path, 'w') as f:
