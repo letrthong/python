@@ -6,7 +6,7 @@ import re
 class tJsonData:
     def __init__(self, name):
         self.file_path = name
-     
+
     def add_item(self, item_path):
         folder_path = os.path.dirname(self.file_path)
         if not os.path.exists(folder_path) or not os.path.isdir(folder_path):
@@ -22,7 +22,7 @@ class tJsonData:
         if not os.path.exists(item_path):
             print(f"The folder '{item_path}' does not exist.")
             return False
-            
+
         with open(item_path, 'r') as file:
             json_item = json.load(file)
 
@@ -34,10 +34,10 @@ class tJsonData:
         # Write the list to a file
         with open(self.file_path, 'w') as f:
             json.dump(sorted_data, f)
-
         return True
+
     # map<key, value>
-    def create_item(seft , items, item_path):
+    def create_item(seft, items, item_path):
         epoch_time = int(time.time())
 
         json_object = {}
