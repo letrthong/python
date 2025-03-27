@@ -1,5 +1,8 @@
 import json
 import os
+import time
+import re
+
 
 class tJsonData:
     def __init__(self, name):
@@ -34,7 +37,26 @@ class tJsonData:
             json.dump(sorted_data, f)
 
         return True
+    # map<key, value>
+    def create_item(seft , items, item_path):
+        epoch_time = int(time.time())
 
+        json_object = {}
+        json_object['epochTime'] = epoch_time
+        
+        data_oject = []
+        for key, value in items.items():
+            # Regular expression pattern for matching numbers (integers and floats)
+            pattern = r'^-?\d+(\.\d+)?$'
+            if bool(re.match(pattern, value)):
+                item = {"key": key, "value" : value}
+                data_oject.append(item)
+           
+        
+        json_object['data'] = data_oject
+
+        with open(item_path, 'w') as f:
+            json.dump(json_object, f)
 
 data_path = './data.json'
 item_path = './item.json'
@@ -42,3 +64,7 @@ item_path = './item.json'
 tJson = tJsonData( data_path )
 tJson.add_item(item_path)
  
+items = {
+    'temp': '4'
+}
+tJson.create_item(items, item_path)
