@@ -17,7 +17,7 @@ class tJsonData:
         else:
             json_object = []
 
-        if os.path.exists(item_path):
+        if not os.path.exists(item_path):
             print(f"The folder '{item_path}' does not exist.")
             return False
             
