@@ -36,8 +36,8 @@ class tJsonData:
             json.dump(sorted_data, f)
         return True
 
-    # map<key, value>
-    def create_item(seft, items, item_path):
+    # map<key,value>
+    def create_item(self, items, item_path):
         epoch_time = int(time.time())
 
         json_object = {}
@@ -56,13 +56,39 @@ class tJsonData:
         with open(item_path, 'w') as f:
             json.dump(json_object, f)
 
-data_path = './data.json'
-item_path = './item.json'
+    def remove_first_item(self):
+        if os.path.exists(self.file_path):
+            with open(self.file_path, 'r') as file:
+                json_object = json.load(file)
+        else:
+            json_object = []
 
-tJson = tJsonData( data_path )
-tJson.add_item(item_path)
- 
-items = {
-    'temp': '4'
-}
-tJson.create_item(items, item_path)
+        if len(json_object) > 0:
+            json_object.pop()
+        
+        # Write the list to a file
+        with open(self.file_path, 'w') as f:
+            json.dump(json_object, f)
+        return True
+    
+    def get_size(self):
+        size_of_array = 0
+        if os.path.exists(self.file_path):
+            with open(self.file_path, 'r') as file:
+                json_object = json.load(file)
+        else:
+            json_object = []
+
+        size_of_array = len(json_object)
+        return  size_of_array
+    
+    def remove_file(self):
+        try:
+            os.remove(self.file_path)
+            print(f"{self.file_path} has been deleted successfully.")
+        except FileNotFoundError:
+            print(f"{self.file_path} not found.")
+        except PermissionError:
+            print(f"Permission denied to delete {self.file_path}.")
+        except Exception as e:
+            print(f"Error occurred: {e}")
