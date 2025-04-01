@@ -4,7 +4,7 @@ from unittest.mock import Mock
 from threading import Thread
 from time import sleep
 from queue import Queue
-from sub import ThreadAndQueue, Animal, Dog
+from ThreadAndQueue import ThreadAndQueue, Animal, Dog
 
 class TestThreadAndQueue(unittest.TestCase):
 
