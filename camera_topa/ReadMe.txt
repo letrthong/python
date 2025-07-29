@@ -1,3 +1,5 @@
+https://docs.ultralytics.com/#how-can-ultralytics-yolo-be-used-for-real-time-object-tracking
+https://universe.roboflow.com/
 
 cap = cv2.VideoCapture("rtsp://username:password@ip_address:port/stream_path")
 
