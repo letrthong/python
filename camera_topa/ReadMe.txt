@@ -1,4 +1,7 @@
- 
+
+cap = cv2.VideoCapture("rtsp://username:password@ip_address:port/stream_path")
+
+
 2. Machine Learning / Deep Learning
 Dữ liệu cần có: Hình ảnh mặt hồ có và không có cám, được gán nhãn (label).
 Mô hình có thể dùng:
