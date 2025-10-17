@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask + JS Example</title>
+  </head>
+  <body>
+    <h1>Welcome to Flask App</h1>
+    <p>This page uses TELUA_URL from environment.</p>
+
+    <script>
+      const url = "{{ telua_url }}";
+      console.log("TELUA_URL from Flask:", url);
+    </script>
+  </body>
+</html>
